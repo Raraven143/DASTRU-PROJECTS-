@@ -10,20 +10,53 @@ namespace REVIEW_2_MOREJON
     {
         static void Main(string[] args)
         {
-           
+            //User Input. Asked User to Input data asked
+            Console.WriteLine("We will get the area of your shape Circle and Rectangle. Please provide the data asked below.\n");          
+
+            Console.WriteLine();
+
+            Console.WriteLine("The Shape Circle \n");
+
+            Console.Write("Enter the Radius: ");
+            double inputRadius = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter the Color of the Shape: ");
+            string circleColor = Console.ReadLine();
+
+            Console.WriteLine();
+            Console.WriteLine("The Shape Rectangle \n");
+
+            Console.Write("Enter the Width of a Rectangle: ");
+            double inputWidth = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter the Height of the Rectangle: ");
+            double inputHeight = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter the Color of the Shape: ");
+            string rectangleColor = Console.ReadLine();
+
+            Console.WriteLine();
+        
+        //Instantiate the object Circle
         Circle circle1 = new Circle();
-            circle1.Color = "Black";
-            circle1.Radius = 10;
 
+            circle1.Color = circleColor;
+            circle1.Radius = inputRadius;
+
+            //Call the methods
             circle1.GetArea();
-            circle1.CalculateArea(10);
+            circle1.CalculateArea();
 
-         Rectangle rectangle1 = new Rectangle();
-            rectangle1.Color = "Pink";
-            rectangle1.Width = 6.7;
-            rectangle1.Height = 12.5;
+            Console.WriteLine();
+        //Instantiate the object Rectangle
+        Rectangle rectangle1 = new Rectangle();
+            rectangle1.Color = rectangleColor;
+            rectangle1.Width = inputWidth;
+            rectangle1.Height = inputHeight;
+
+            //Call the methods
             rectangle1.GetArea();
-            rectangle1.CalculateArea(6.7 * 12.5);
+            rectangle1.CalculateArea();
         }
     }
 }

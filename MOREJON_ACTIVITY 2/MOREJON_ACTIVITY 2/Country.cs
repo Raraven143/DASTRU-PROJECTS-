@@ -8,7 +8,7 @@ namespace MOREJON_ACTIVITY_2
 
 //MOREJON, RAVEN T | ACTIVITY 2: Single Dimensional Array of Objects in OOP | IT401A
 {
-    internal class Country //Base class
+     class Country //Base class
     {
         //Properties of a parent class
         public string Name { get; set; }
@@ -26,7 +26,11 @@ namespace MOREJON_ACTIVITY_2
         
         public virtual void DisplayInfo() //Method of Base class
         {
-
+            Console.WriteLine($"Country Name: {Name}");
+            Console.WriteLine($"Capital: {Capital}");
+            Console.WriteLine($"Currency: {Currency}");
+            Console.WriteLine($"Population: {Population:N0}");
+            Console.WriteLine();
         }
         
     }   

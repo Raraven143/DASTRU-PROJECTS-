@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACTIVITY 6_MOREJON", "ACTIVITY 6_MOREJON\ACTIVITY 6_MOREJON.csproj", "{DCA57D7D-33EF-4A14-B94D-2010376677FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCA57D7D-33EF-4A14-B94D-2010376677FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCA57D7D-33EF-4A14-B94D-2010376677FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCA57D7D-33EF-4A14-B94D-2010376677FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCA57D7D-33EF-4A14-B94D-2010376677FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {494FCC3B-B9C5-4E6D-9642-5E423A4DAD04}
+	EndGlobalSection
+EndGlobal

@@ -10,72 +10,52 @@ namespace MOREJON_Linked_List_in_OOP
     {
         static void Main(string[] args)
         {
-            LinkedList<Country> countryList = new LinkedList<Country>();
+            CountryManager manager = new CountryManager();
+            bool running = true;
 
-            Console.WriteLine("=== COUNTRY LINKED LIST PROGRAM ===\n");
+            Console.WriteLine("=== COUNTRY MANAGEMENT SYSTEM ===");
 
-            // Add first country (Asia)
-            Console.WriteLine("Enter details for the first country (Asian Country):");
-            countryList.AddFirst(CreateAsia());
-            Console.WriteLine("Country added successfully!\n");
 
-            // Add second country (Europe)
-            Console.WriteLine("Enter details for the second country (European Country):");
-            countryList.AddFirst(CreateEurope());
-            Console.WriteLine("Country added successfully!\n");
-
-            // Add country at the beginning
-            Console.WriteLine("Enter details for another asian country:");
-            countryList.AddLast(CreateAsia());
-            Console.WriteLine("Country added successfully!\n");
-
-            // Add country at the last
-            Console.WriteLine("Enter details for another European country:");
-            countryList.AddLast(CreateEurope());
-            Console.WriteLine("Country added successfully!\n");
-
-            // Display all countries
-            Console.WriteLine("Displaying all countries in the linked list:\n");
-            DisplayCountries(countryList);
-
-            
-        }
-
-        static Asia CreateAsia()
-        {
-            string name = UserInput.GetString("Country Name: ");
-            string capital = UserInput.GetString("Capital: ");
-            string currency = UserInput.GetString("Currency: ");
-            int population = UserInput.GetInt("Population: ");
-            string region = UserInput.GetString("Region: ");
-
-            return new Asia(name, capital, currency, population, region);
-        }
-
-        static Europe CreateEurope()
-        {
-            string name = UserInput.GetString("Country Name: ");
-            string capital = UserInput.GetString("Capital: ");
-            string currency = UserInput.GetString("Currency: ");
-            int population = UserInput.GetInt("Population: ");
-            string language = UserInput.GetString("Main Language: ");
-
-            return new Europe(name, capital, currency, population, language);
-        }
-
-        static void DisplayCountries(LinkedList<Country> list)
-        {
-            if (list.Count == 0)
+            while (running)
             {
-                Console.WriteLine("No countries in the list.");
-                return;
-            }
+                Console.WriteLine("CHOOSE WHAT TO DO!");
+                Console.WriteLine("\n1. Add Asia\n2. Add Europe\n3. Remove Currency\n4. Display All\n5. Exit");
 
-            foreach (Country c in list)
-            {
-                c.DisplayInfo();
+                // Re-using the try-catch style for the menu
+                int choice = UserInput.GetInt("Select Option: ");
+
+                switch (choice)
+                {
+                    case 1:
+                        // Calls the method that asks for Name, Pop, etc.
+                        manager.AddCountry(UserInput.GetAsiaInput());
+                        break;
+                        Console.Clear();
+
+                    case 2:
+                        // Calls the method that asks for Name, Pop, etc.
+                        manager.AddCountry(UserInput.GetEuropeInput());
+                        break;
+
+                    case 3:
+                        string target = UserInput.GetString("Enter currency to remove: ");
+                        manager.RemoveCountry(target);
+                        break;
+
+                    case 4:
+                        manager.DisplayAll();
+                        break;
+
+                    case 5:
+                        running = false;
+                        Console.WriteLine("Closing...");
+                        break;
+
+                    default:
+                        Console.WriteLine("Please choose 1-5.");
+                        break;
+                }
             }
         }
     }
-    
 }

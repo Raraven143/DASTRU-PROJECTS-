@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MOREJON_Linked_List_in_OOP
 {
-    internal class Country
+    public abstract class Country
     {
         public string Name { get; set; }
         public string Capital { get; set; }
@@ -15,56 +15,27 @@ namespace MOREJON_Linked_List_in_OOP
 
         public Country(string name, string capital, string currency, int population)
         {
-            Name = name;
-            Capital = capital;
-            Currency = currency;
-            Population = population;
+            Name = name; Capital = capital; Currency = currency; Population = population;
         }
 
-        public virtual void DisplayInfo()
-        {
-            Console.WriteLine($"Country Name : {Name}");
-            Console.WriteLine($"Capital      : {Capital}");
-            Console.WriteLine($"Currency     : {Currency}");
-            Console.WriteLine($"Population   : {Population:N0}");
-        }
+        public abstract void DisplayInfo();
     }
 
-    class Asia : Country
+    public class Asia : Country
     {
         public string Region { get; set; }
+        public Asia(string n, string c, string cur, int p, string r) : base(n, c, cur, p) => Region = r;
 
-        public Asia(string name, string capital, string currency, int population, string region)
-            : base(name, capital, currency, population)
-        {
-            Region = region;
-        }
-
-        public override void DisplayInfo()
-        {
-            Console.WriteLine("=== Asian Country ===");
-            base.DisplayInfo();
-            Console.WriteLine($"Region       : {Region}");
-            Console.WriteLine();
-        }
+        public override void DisplayInfo() =>
+            Console.WriteLine($"[ASIA] {Name} | Capital: {Capital} | Currency: {Currency} | Pop: {Population:N0} | Region: {Region}");
     }
 
-    class Europe : Country
+    public class Europe : Country
     {
         public string Language { get; set; }
+        public Europe(string n, string c, string cur, int p, string l) : base(n, c, cur, p) => Language = l;
 
-        public Europe(string name, string capital, string currency, int population, string language)
-            : base(name, capital, currency, population)
-        {
-            Language = language;
-        }
-
-        public override void DisplayInfo()
-        {
-            Console.WriteLine("=== European Country ===");
-            base.DisplayInfo();
-            Console.WriteLine($"Language     : {Language}");
-            Console.WriteLine();
-        }
+        public override void DisplayInfo() =>
+            Console.WriteLine($"[EUROPE] {Name} | Capital: {Capital} | Currency: {Currency} | Pop: {Population:N0} | Lang: {Language}");
     }
 }

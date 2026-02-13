@@ -33,7 +33,7 @@ namespace MOREJON_Linked_List_in_OOP
                         // You can customize this list of 'protected' currencies
                       countryList.Remove(node);
                         
-                        Console.WriteLine($"Bag removed.");
+                        Console.WriteLine($"Country removed.");
                     return true;
                         
                     }

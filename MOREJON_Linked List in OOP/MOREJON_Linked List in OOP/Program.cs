@@ -18,19 +18,21 @@ namespace MOREJON_Linked_List_in_OOP
 
             while (running)
             {
-                Console.WriteLine("CHOOSE WHAT TO DO!");
+                Console.Clear();
+                Console.WriteLine("\nCHOOSE WHAT TO DO!");
                 Console.WriteLine("\n1. Add Asia\n2. Add Europe\n3. Remove Currency\n4. Display All\n5. Exit");
 
                 // Re-using the try-catch style for the menu
                 int choice = UserInput.GetInt("Select Option: ");
 
+                Console.Clear();
                 switch (choice)
                 {
                     case 1:
                         // Calls the method that asks for Name, Pop, etc.
                         manager.AddCountry(UserInput.GetAsiaInput());
                         break;
-                        Console.Clear();
+                        
 
                     case 2:
                         // Calls the method that asks for Name, Pop, etc.
@@ -54,6 +56,11 @@ namespace MOREJON_Linked_List_in_OOP
                     default:
                         Console.WriteLine("Please choose 1-5.");
                         break;
+                }
+                if (running)
+                {
+                    Console.WriteLine("\nPress any key to continue.");
+                    Console.ReadKey();
                 }
             }
         }

@@ -16,25 +16,28 @@ namespace MOREJON_ACTIVITY_9
             Stack<string> Country = new Stack<string>(5);
 
             bool running = true;
-
+              
+            Console.Clear();
             Console.WriteLine("=== FAVORITE COUNTRY TRACKER ===");
 
+            
             while (running)
 
             {
                 Console.WriteLine("\n--- HERE'S WHAT TO DO ON YOUR COUNTRY TO VISIT LISTS! ---");
-                Console.WriteLine("1. Add your favourite Country to Visit.");
+                Console.WriteLine("1. Add your favourite Country to Visit (Maximum at 5).");
                 Console.WriteLine("2. Remove the latest country.");
                 Console.WriteLine("3. Check the total Countries.");
                 Console.WriteLine("4. View all the Countries you input.");
                 Console.WriteLine("5. Exit");
                 Console.Write("Enter your choice: ");
 
-                Console.Clear();
+                
                 try
                 {
+                   
                     string choice = Console.ReadLine();
-
+                    Console.Clear();
                     switch (choice)
                     {
                         case "1":

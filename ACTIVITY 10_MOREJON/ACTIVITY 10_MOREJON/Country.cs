@@ -41,6 +41,7 @@ namespace ACTIVITY_10_MOREJON
 
         public override void DisplayInfo()
         {
+            base.DisplayInfo();
             Console.WriteLine($"Currency: {Currency}");
             Console.WriteLine($"Language: {Language}");
         }
